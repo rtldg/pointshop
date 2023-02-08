@@ -357,7 +357,7 @@ function Player:PS_EquipItem(item_id)
 		end
 	end
 
-	if CATEGORY and isnumber(CATEGORY.AllowedEquipped) and CATEGORY.AllowedSubEquipped > -1 then
+	if CATEGORY and isnumber(CATEGORY.AllowedSubEquipped) and CATEGORY.AllowedSubEquipped > -1 then
 		if self:PS_NumItemsEquippedFromSubCategory(ITEM.SubCategory) + 1 > CATEGORY.AllowedSubEquipped then
 			self:PS_Notify('Only ' .. CATEGORY.AllowedSubEquipped .. ' item' .. (CATEGORY.AllowedSubEquipped == 1 and '' or 's') .. ' can be equipped from this subcategory!')
 			return false
